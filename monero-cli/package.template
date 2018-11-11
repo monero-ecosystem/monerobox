@@ -1,0 +1,39 @@
+Section: misc
+Priority: optional
+Homepage: https://getmonero.org
+Standards-Version: 3.9.2
+
+Package: monero-cli
+Version: TO_BE_REPLACED
+Maintainer: Jason Wong <jason.hcwong@gmail.com>
+# Pre-Depends: <comma-separated list of packages>
+# Depends: <comma-separated list of packages>
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+# Architecture: armhf
+# Multi-Arch: <one of: foreign|same|allowed>
+Copyright: license
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Links: <pair of space-separated paths; First is path symlink points at, second is filename of link>
+Files: monero_binary/monerod /usr/bin/
+ monero_binary/monero-wallet-cli /usr/bin/
+ monero_binary/monero-blockchain-ancestry /usr/bin/
+ monero_binary/monero-blockchain-export /usr/bin/
+ monero_binary/monero-blockchain-mark-spent-outputs /usr/bin/
+ monero_binary/monero-wallet-cli /usr/bin/
+ monero_binary/monero-blockchain-depth  /usr/bin/
+ monero_binary/monero-blockchain-import /usr/bin/ 
+ monero_binary/monero-blockchain-usage /usr/bin/
+ monero_binary/monero-gen-trusted-multisig /usr/bin/
+ monero_binary/monero-wallet-rpc /usr/bin/
+ monerod.conf /etc/
+ monerod.service /etc/systemd/system/
+
+Description: Monero CLI Tools
+ This package does not build binary from source, the binary files in the package are downloaded from Monero Office site.
+ .
+ Users can verify the checksum of the binary files of the package against those from Monero official site.
