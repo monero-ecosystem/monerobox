@@ -1,0 +1,3 @@
+[submodule "RPi-Monitor"]
+	path = RPi-Monitor
+	url = https://github.com/XavierBerger/RPi-Monitor.git
