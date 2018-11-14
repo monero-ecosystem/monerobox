@@ -15,17 +15,29 @@ else
   exit 1
 fi
 
-rm -rf monero_binary package.cfg
-mkdir monero_binary
+rm -rf build
+mkdir build
 
-wget -q -O - $URL | tar -C monero_binary -jx
+wget -q -O - $URL | tar -C build -jx
 
-VERSION="$(ls monero_binary | tr -d "monero\-v")"
+VERSION="$(ls build | tr -d "monero\-v")"
 
-mv monero_binary/monero-v$VERSION/* monero_binary/
+mv build/monero-v$VERSION/* build/
 
-sed s/^Version.*/Version:\ $VERSION/g package.template > package.cfg
+sed s/^Version.*/Version:\ $VERSION/g package.template > build/package.cfg
+
+cp license build/
+cp monerod.conf build/
+cp monerod.service build/
+cp monero-cli.postinst build/
+cp monero-cli.prerm build/
+
+cd build
 
 equivs-build -a $ARCH package.cfg
 
-rm -rf monero_binary package.cfg
+mv monero-cli*.deb ../
+
+cd ../
+
+rm -rf build

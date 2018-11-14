@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+echo "Enabling monerod service"
+systemctl enable monerod.service
+
+echo "Starting monerod service"
+systemctl start monerod.service
+
+exit 0

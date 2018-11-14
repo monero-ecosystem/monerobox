@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+echo "Stopping monerod service"
+systemctl stop monerod.service
+
+echo "Disabling monerod service"
+systemctl disable monerod.service
+
+exit 0
