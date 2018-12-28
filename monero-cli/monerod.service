@@ -3,8 +3,8 @@ Description=Monero Full Node
 After=network.target
 
 [Service]
-User=pi
-Group=pi
+User=rock64
+Group=rock64
 WorkingDirectory=~
 RuntimeDirectory=monero
 
