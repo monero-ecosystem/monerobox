@@ -2,6 +2,8 @@
 
 # This script downloads monero cli tools from Monero official website and make a deb package from the tarball.
 
+REVISION=monerobox-1
+
 if [ "$1" = "armv7" ]; then
   echo "Building package for armv7"
   URL="https://downloads.getmonero.org/cli/linuxarm7"
@@ -24,7 +26,7 @@ VERSION="$(ls build | tr -d "monero\-v")"
 
 mv build/monero-v$VERSION/* build/
 
-sed s/^Version.*/Version:\ $VERSION/g package.template > build/package.cfg
+sed s/^Version.*/Version:\ $VERSION-$REVISION/g package.template > build/package.cfg
 
 cp license build/
 cp monerod.conf build/
