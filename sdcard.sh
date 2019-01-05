@@ -14,6 +14,10 @@ fi
 mkdir /mnt/data
 chown rock64:rock64 /mnt/data
 
+# blacklist UAS
+echo "options usb-storage quirks=0x2537:0x1066:u,0x2537:0x1068:u,0x0bc2:0xa013:u,0x152d:0x0578:u,0x0bc2:0x2101:u,0x2109:0x0715:u" > /etc/modprobe.d/blacklist-uas.conf
+update-initramfs -u
+
 # mount ssd at boot
 echo "/dev/sda1 /mnt/data ext4 defaults 0 0" >> /etc/fstab
 mount -a
