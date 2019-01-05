@@ -2,7 +2,7 @@
 
 # This script downloads monero cli tools from Monero official website and make a deb package from the tarball.
 
-REVISION=monerobox-1
+REVISION="monerobox-1"
 
 if [ "$1" = "armv7" ]; then
   echo "Building package for armv7"
