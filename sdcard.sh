@@ -36,7 +36,8 @@ apt upgrade -y
 
 # setup apt unattened update for monerobox repo
 apt install -y unattended-upgrades
-sudo sed -i '/^Unattended-Upgrade::Origins-Pattern/a \ \ \ \ \ \ \ \ "o=monerobox,n=bionic,l=monerobox,c=main";' /etc/apt/apt.conf.d/50unattended-upgrades
+echo "Unattended-Upgrade::Origins-Pattern { \"o=monerobox,n=bionic,l=monerobox,c=main\"; }; " >> /etc/apt/apt.conf.d/50unattended-upgrades
+
 
 # setup zero-conf network
 echo "monerobox" > /etc/hostname
