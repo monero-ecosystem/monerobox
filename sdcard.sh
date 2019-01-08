@@ -37,6 +37,7 @@ apt upgrade -y
 # setup apt unattened update for monerobox repo
 apt install -y unattended-upgrades
 echo "Unattended-Upgrade::Origins-Pattern { \"o=monerobox,n=bionic,l=monerobox,c=main\"; }; " >> /etc/apt/apt.conf.d/50unattended-upgrades
+echo "Dpkg::Options { \"--force-confdef\"; \"--force-confold\"; };" >> /etc/apt/apt.conf.d/50unattended-upgrades
 
 
 # setup zero-conf network
