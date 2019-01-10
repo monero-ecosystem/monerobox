@@ -31,7 +31,7 @@ ExecStart=/usr/bin/monerod --config-file /etc/monerod.conf \
 #    --non-interactive
 
 Restart=always
-RestartSec=5
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
