@@ -24,6 +24,8 @@ postinst: monero-cli.postinst
 # The following file paths work with equivs 2.0.9+nmu1 on ubuntu 16.04 
 Files: monerod.conf /etc/
  monerod.service /etc/systemd/system/
+ check_monerod_stuck_cron /etc/cron.d/
+ check_monerod_stuck /usr/bin/
  monerod /usr/bin/
  monero-wallet-cli /usr/bin/
  monero-blockchain-ancestry /usr/bin/

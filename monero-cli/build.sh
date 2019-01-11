@@ -31,6 +31,8 @@ sed s/^Version.*/Version:\ $VERSION-$REVISION/g package.template > build/package
 cp license build/
 cp monerod.conf build/
 cp monerod.service build/
+cp check_monerod_stuck build/
+cp check_monerod_stuck_cron build/
 cp monero-cli.postinst build/
 cp monero-cli.prerm build/
 

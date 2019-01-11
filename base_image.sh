@@ -10,17 +10,13 @@ fi
 #echo "rock64:rock64" | chpasswd
 #usermod -aG sudo rock64
 
-# create mount point for SSD
-mkdir /mnt/data
-chown rock64:rock64 /mnt/data
+# create data directory for blockchain
+mkdir /data
+chown rock64:rock64 /data
 
 # blacklist UAS
 echo "options usb-storage quirks=0x2537:0x1066:u,0x2537:0x1068:u,0x0bc2:0xa013:u,0x152d:0x0578:u,0x0bc2:0x2101:u,0x2109:0x0715:u" > /etc/modprobe.d/blacklist-uas.conf
 update-initramfs -u
-
-# mount ssd at boot
-echo "/dev/sda1 /mnt/data ext4 defaults 0 0" >> /etc/fstab
-mount -a
 
 # sudoer file for rock64
 echo "Cmnd_Alias SYSTEMCTL_MONEROD = /bin/systemctl start monerod, /bin/systemctl stop monerod, /bin/systemctl restart monerod, /bin/systemctl enable monerod, /bin/systemctl disable monerod, /usr/sbin/service rpimonitor restart, /sbin/shutdown -h now, /sbin/shutdown -r now" >> /etc/sudoers.d/rock64
@@ -46,7 +42,4 @@ apt install -y avahi-daemon
 
 # install monero-cli, rpimonitor and shellinabox
 apt install -y monero-cli rpimonitor shellinabox
-
-# add cronjob to check if monerod is stuck
-echo "*/10    *       *       *       *       root    /usr/bin/check_monerod_stuck >> /var/log/check_monerod_stuck.log 2>&1" >> /etc/crontab
 
