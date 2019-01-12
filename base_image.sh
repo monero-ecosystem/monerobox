@@ -20,7 +20,7 @@ update-initramfs -u
 
 # add monerobox repo to apt
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 2895E20A
-echo "deb http://apt-repo.hcwong.me/ bionic main" | tee --append /etc/apt/sources.list.d/monerobox.list
+echo "deb http://repo.monerobox.store/ bionic main" | tee --append /etc/apt/sources.list.d/monerobox.list
 
 # update apt repo
 apt update
