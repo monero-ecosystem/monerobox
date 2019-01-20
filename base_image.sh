@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This script is used to create the OS image for monerobox.
+# It requires a clean ayufan's Rock64 Linux releases installed.
+# ayufan's Linux can be found at https://github.com/ayufan-rock64/linux-build/releases
+
 if [ "$EUID" -ne 0 ] ; then
   echo "Please run as root or with sudo"
   exit
@@ -36,6 +40,15 @@ echo "Dpkg::Options { \"--force-confdef\"; \"--force-confold\"; };" >> /etc/apt/
 echo "monerobox" > /etc/hostname
 apt install -y avahi-daemon
 
-# install monero-cli, rpimonitor and shellinabox
-apt install -y monero-cli rpimonitor-monerobox shellinabox
+# install monero-cli, rpimonitor, shellinabox and openvpn
+apt install -y monero-cli rpimonitor-monerobox shellinabox openvpn
+
+# For device with 1GB RAM: limit speed and maxcurrency to avoid oom-killer
+memLimit="1508344"
+memTotal=`grep MemTotal /proc/meminfo | awk '{print $2}'`
+if [ "$memTotal" -lt "$memLimit" ]; then
+  echo "limit-rate=1000" >> /etc/monerod.conf
+  echo "max-concurrency=3" >> /etc/monerod.conf
+  systemctl restart monerod
+fi
 
