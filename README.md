@@ -18,6 +18,23 @@ Rock64 + SSD: Rock64 1GB has an ARM 64-bit processor, lower price and USB 3 port
 ## Software
 Monerobox is designed to be easy to use and friendly to beginners. Monitoring and Administration can be done with web UI([RPi-Monitor-Monerobox](https://github.com/Jasonhcwong/RPi-Monitor-Monerobox)) accessed on a mobile phone. Users are recommended to use monerobox as a remote node and connect their mobile wallets to it. Thus coins are stored on the mobile wallets on mobile phones not monerobox so that their fund will be safe even if monerobox is being hacked or destroyed.
 
+## Demo
+There is a demo of Monerobox 1 GB model at http://demo.monerobox.store.  
+This box will delete the blockchain and restart syncing every Monday 07:00 UTC.  
+It takes about 36 hours to fully sync the blockchain. After that mobile wallets can connect to it and used it as a remote node.  
+Remote node address: demo.monerbox.store  
+Remote node port: 18933  
+Remote node username: monero  
+Remote node password: monerobox  
+
+## User Manual
+User Manual can be found [here](https://github.com/Jasonhcwong/monerobox/wiki/Monerobox-User-Manual) in the wiki.
+
+## Support
+* Donation: 44QnYSXPtbrcJAkG3RZmpxFhrnPKhmvFcDYP5EPDuJx3D816VBnenQTfAnra8NDGo2Qj6dokRZMzUMm7e9CQfFTKCzbNCgH  
+[[/donation_address.png|Donation]]  
+* Buy a Monerobox at https://monerobox.store
+
 ## Credit
 Monerobox is developed based many other open-source software including:  
 * [Monero CLI tools by Monero project](https://github.com/monero-project/monero)
