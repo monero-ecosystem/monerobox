@@ -32,7 +32,7 @@ User Manual can be found [here](https://github.com/Jasonhcwong/monerobox/wiki/Mo
 
 ## Support
 * Donation: 44QnYSXPtbrcJAkG3RZmpxFhrnPKhmvFcDYP5EPDuJx3D816VBnenQTfAnra8NDGo2Qj6dokRZMzUMm7e9CQfFTKCzbNCgH  
-[[/donation_address.png|Donation]]  
+<img src="./donation_address.png">  
 * Buy a Monerobox at https://monerobox.store
 
 ## Credit
