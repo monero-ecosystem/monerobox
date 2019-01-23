@@ -31,7 +31,8 @@ Remote node password: monerobox
 User Manual can be found [here](https://github.com/Jasonhcwong/monerobox/wiki/Monerobox-User-Manual) in the wiki.
 
 ## Support
-* Buy a Monerobox at https://monerobox.store
+* Buy a [Monero sticker](https://monerobox.store/product/monero-sticker/)
+* Buy a [Monerobox](https://monerobox.store)
 * Donation: 44QnYSXPtbrcJAkG3RZmpxFhrnPKhmvFcDYP5EPDuJx3D816VBnenQTfAnra8NDGo2Qj6dokRZMzUMm7e9CQfFTKCzbNCgH  
 <img src="./donation_address.png">  
 
