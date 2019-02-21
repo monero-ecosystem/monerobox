@@ -20,8 +20,6 @@ Monerobox is designed to be easy to use and friendly to beginners. Monitoring an
 
 ## Demo
 There is a demo of Monerobox 1 GB model at http://demo.monerobox.store.  
-This box will delete the blockchain and restart syncing every Monday 07:00 UTC.  
-It takes about 36 hours to fully sync the blockchain. After that mobile wallets can connect to it and used it as a remote node.  
 Remote node address: demo.monerbox.store  
 Remote node port: 18933  
 Remote node username: monero  
