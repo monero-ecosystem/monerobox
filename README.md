@@ -20,8 +20,8 @@ Monerobox is designed to be easy to use and friendly to beginners. Monitoring an
 
 ## Demo
 There is a demo of Monerobox 1 GB model at http://demo.monerobox.store.  
-Remote node address: demo.monerbox.store  
-Remote node port: 18933  
+Remote node address: demo.monerobox.store  
+Remote node port: 18089  
 Remote node username: monero  
 Remote node password: monerobox  
 
