@@ -30,6 +30,12 @@ Remote node password: monerobox
 ## User Manual
 User Manual can be found [here](https://github.com/Jasonhcwong/monerobox/wiki/Monerobox-User-Manual) in the wiki.
 
+## TODO  
+* [ ] Containerization  
+* [ ] March hard fork  
+* [ ] Tor support  
+* [ ] Light wallet server
+
 ## Support
 * Buy a [Monero sticker](https://monerobox.store/product/monero-sticker/)
 * Buy a [Monerobox](https://monerobox.store)
