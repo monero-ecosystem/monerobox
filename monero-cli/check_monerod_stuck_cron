@@ -1,2 +1,0 @@
-# check monerod stuck every 10 minutes
-*/10    *       *       *       *       root    /usr/bin/check_monerod_stuck >> /var/log/check_monerod_stuck.log 2>&1

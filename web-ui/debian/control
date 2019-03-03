@@ -1,7 +1,0 @@
-Package: rpimonitor-monerobox
-Version: {DEVELOPMENT}
-Architecture: all
-Section: misc
-Depends: perl, librrds-perl, libhttp-daemon-perl (>= 6.0.0) | libwww-perl (<< 6.0.0), libjson-perl, libipc-sharelite-perl, libfile-which-perl, libsnmp-extension-passpersist-perl, aptitude
-Maintainer: Jason Wong <jason.hcwong@gmail.com>
-Description: RPi-Monitor-box the web UI for monerobox. It is based on RPi-Monitor which is a monitoring application designed to be smart and powerfull.
