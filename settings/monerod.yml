@@ -18,7 +18,7 @@ services:
       - "18081:18083"
     networks:
       monerobox:
-        ipv4_address: 172.20.1.2
+        ipv4_address: 172.20.1.10
 
 networks:
   monerobox:
