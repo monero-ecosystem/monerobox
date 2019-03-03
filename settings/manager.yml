@@ -19,7 +19,8 @@ services:
       - /usr//bin/docker:/usr/bin/docker
       - settings:/settings
     networks:
-      - monerobox
+      monerobox:
+        ipv4_address: 172.20.1.2
 
 volumes:
   settings:

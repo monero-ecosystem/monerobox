@@ -24,7 +24,8 @@ services:
     ports:
       - "80:80"
     networks:
-      - monerobox
+      monerobox:
+        ipv4_address: 172.20.1.2
 
 volumes:
   data_monero:

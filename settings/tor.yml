@@ -12,7 +12,8 @@ services:
     cpuset: "0"
     oom_kill_disable: true
     networks:
-      - monerobox
+      monerobox:
+        ipv4_address: 172.20.1.2
 
 networks:
   monerobox:
