@@ -2,7 +2,7 @@
 
 set -ex
 
-cd /usr/src/app/docker
+cd /usr/src/app/monerobox
 
 # pull yml files and config files from github
 git pull
