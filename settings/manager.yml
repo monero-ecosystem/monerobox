@@ -1,0 +1,30 @@
+version: '2.4'
+
+services:
+  manager:
+    container_name: manager
+    hostname: manager
+    restart: always
+    image: monerobox/manager:latest
+    mem_limit: 128m
+    memswap_limit: -1
+    cpus: 1
+    cpuset: "0"
+    oom_kill_disable: true
+    environment:
+      - HOST_HOSTNAME
+      - HOST_IP
+    volumes:
+      - /run/docker.sock:/run/docker.sock
+      - /usr//bin/docker:/usr/bin/docker
+      - settings:/settings
+    networks:
+      - monerobox
+
+volumes:
+  settings:
+    external: true
+
+networks:
+  monerobox:
+    external: true

@@ -7,7 +7,7 @@ Software such as monero command line tools and web UI will be updated automatica
 ## Features  
 
 * Plug-and-play by utilizing zero-configuration network, user don't need to SSH or anything, just plug the ethernet cable and power cable  
-* Auto update new monero cli tools and web UI from an apt repository  
+* Monero daemon and web UI are running in docker containers and auto updated via docker hub  
 * Web-based monitoring UI  
 * Web-based management UI for monero daemon  
 
@@ -29,9 +29,9 @@ Remote node password: monerobox
 User Manual can be found [here](https://github.com/Jasonhcwong/monerobox/wiki/Monerobox-User-Manual) in the wiki.
 
 ## TODO  
-* [ ] Containerization  
-* [ ] March hard fork  
-* [ ] Tor support  
+* [x] Containerization  
+* [x] March hard fork  
+* [x] Tor support  
 * [ ] Light wallet server
 
 ## Support
@@ -45,3 +45,4 @@ Monerobox is developed based many other open-source software including:
 * [Monero CLI tools by Monero project](https://github.com/monero-project/monero)
 * [RPI-Monitor by Xavier Berger](https://github.com/XavierBerger/RPi-Monitor)
 * [Rock64 Linux by ayufan](https://github.com/ayufan-rock64/linux-build)
+* [Armbian](https://www.armbian.com/)

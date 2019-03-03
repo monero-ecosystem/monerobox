@@ -1,0 +1,31 @@
+version: '2.4'
+
+services:
+  monerod:
+    container_name: monerod
+    hostname: monerod
+    restart: on-failure
+    image: monerobox/monerod:latest
+    mem_limit: 750m
+    memswap_limit: -1
+    cpus: 3
+    cpuset: "1-3"
+    volumes:
+      - data_monero:/data/monero
+      - settings:/settings
+    ports:
+      - "18080:18080"
+      - "18081:18083"
+    networks:
+      - monerobox
+
+networks:
+  monerobox:
+    external: true
+
+volumes:
+  data_monero:
+    external: true
+  settings:
+    external: true
+

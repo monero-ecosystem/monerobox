@@ -1,0 +1,38 @@
+version: '2.4'
+
+services:
+  web:
+    container_name: web
+    hostname: web
+    restart: always
+    image: monerobox/web:latest
+    mem_limit: 128m
+    memswap_limit: -1
+    cpus: 1
+    cpuset: "0"
+    oom_kill_disable: true
+    volumes:
+      - /sys/class/net/eth0:/usr/src/app/host_dev/net/eth0
+      - /run/systemd:/run/systemd
+      - /run/docker.sock:/run/docker.sock
+      - /usr//bin/docker:/usr/bin/docker
+      - settings:/settings
+      - data_monero:/data/monero
+    environment:
+      - HOST_HOSTNAME
+      - HOST_IP
+    ports:
+      - "80:80"
+    networks:
+      - monerobox
+
+volumes:
+  data_monero:
+    external: true
+  settings:
+    external: true
+
+networks:
+  monerobox:
+    external: true
+
