@@ -17,6 +17,10 @@ services:
       monerobox:
         ipv4_address: 172.20.1.3
 
+volumes:
+  data_tor:
+    external: true
+
 networks:
   monerobox:
     external: true

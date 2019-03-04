@@ -29,6 +29,8 @@ services:
         ipv4_address: 172.20.1.4
 
 volumes:
+  data_tor:
+    external: true
   data_monero:
     external: true
   settings:
