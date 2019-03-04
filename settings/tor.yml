@@ -11,6 +11,8 @@ services:
     cpus: 1
     cpuset: "0"
     oom_kill_disable: true
+    volumes:
+      - data_tor:/data/tor
     networks:
       monerobox:
         ipv4_address: 172.20.1.3

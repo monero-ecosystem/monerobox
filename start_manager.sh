@@ -1,6 +1,7 @@
 #/bin/bash
 
 docker network create --subnet 172.20.1.0/24 --gateway 172.20.1.1 monerobox
+docker volume create data_tor
 docker volume create data_monero
 docker volume create settings
 

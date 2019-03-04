@@ -17,6 +17,7 @@ services:
       - /run/docker.sock:/run/docker.sock
       - /usr//bin/docker:/usr/bin/docker
       - settings:/settings
+      - data_tor:/data/tor
       - data_monero:/data/monero
     environment:
       - HOST_HOSTNAME
