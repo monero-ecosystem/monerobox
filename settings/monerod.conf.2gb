@@ -13,4 +13,4 @@ rpc-restricted-bind-port=18083
 confirm-external-bind=1
 
 max-concurrency=3
-
+limit-rate=1000
