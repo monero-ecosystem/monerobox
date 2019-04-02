@@ -28,7 +28,7 @@ COPY qemu-aarch64-static /usr/bin
 
 # install tools
 RUN apt-get update \
-  && apt-get install -y torsocks libnorm1
+  && apt-get install -y jq torsocks libnorm1
 
 # Create app directory
 WORKDIR /usr/src/app
