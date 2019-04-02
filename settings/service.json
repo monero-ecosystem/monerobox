@@ -1,0 +1,19 @@
+{
+  "web": {
+    "enabled": true
+  },
+  "tor": {
+    "enabled": true
+  },
+  "monero": {
+    "tor": false,
+    "enabled": true
+  },
+  "litecoin": {
+    "enabled": false
+  },
+  "bitcoin": {
+    "enabled": false
+  }
+}
+

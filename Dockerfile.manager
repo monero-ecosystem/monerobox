@@ -5,7 +5,7 @@ COPY qemu-aarch64-static /usr/bin
 
 # install tools
 RUN apt-get update \
-  && apt-get install -y git python-pip libltdl7
+  && apt-get install -y jq git python-pip libltdl7
 
 # Create app directory
 WORKDIR /usr/src/app
