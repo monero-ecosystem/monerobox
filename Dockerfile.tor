@@ -10,8 +10,4 @@ RUN apt-get update \
 # Create app directory
 WORKDIR /usr/src/app
 
-# Enable torsocks
-RUN sed -i 's/#SOCKSPort 9050/SOCKSPort 0.0.0.0:9050/g' /etc/tor/torrc
-
-ENTRYPOINT ["tor", "-f", "/etc/tor/torrc"]
-
+ENTRYPOINT ["tor", "-f", "/settings/tor.conf"]
