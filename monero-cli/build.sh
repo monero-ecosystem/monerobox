@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script downloads monero cli tools from Monero official website and make a deb package from the tarball.
-
+VERSION="0.15.0.1"
 REVISION="monerobox-1"
 
 if [ "$1" = "armv7" ]; then
@@ -22,9 +22,9 @@ mkdir build
 
 wget -q -O - $URL | tar -C build -jx
 
-VERSION="$(ls build | tr -d "monero\-v")"
+folder="$(ls build)"
 
-mv build/monero-v$VERSION/* build/
+mv build/$folder/* build/
 
 sed s/^Version.*/Version:\ $VERSION-$REVISION/g package.template > build/package.cfg
 
