@@ -40,7 +40,7 @@ apt install -y docker-ce docker-ce-cli containerd.io
 
 # install docker-compose
 apt install -y python-pip python-setuptools python-dev libltdl7 libffi-dev
-pip install docker-compose
+pip install docker-compose==1.24.0
 
 
 # add user rock64 to docker group
