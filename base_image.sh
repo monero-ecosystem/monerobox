@@ -40,6 +40,7 @@ apt install -y docker-ce=5:18.09.5~3-0~ubuntu-bionic docker-ce-cli containerd.io
 
 # install docker-compose
 apt install -y python-pip python-setuptools python-dev libltdl7 libffi-dev
+pip install wheel
 pip install docker-compose==1.24.0
 
 
