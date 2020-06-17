@@ -6,7 +6,7 @@ services:
     hostname: monerod
     restart: on-failure
     image: monerobox/monerod:latest
-    mem_limit: 750m
+    mem_limit: 2750m
     memswap_limit: -1
     cpus: 3
     cpuset: "1-3"
