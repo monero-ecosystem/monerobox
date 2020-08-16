@@ -32,7 +32,7 @@ User Manual can be found [here](https://github.com/Jasonhcwong/monerobox/wiki/Mo
 * [x] Containerization  
 * [x] March hard fork  
 * [x] Tor support  
-* [ ] Tor hidden service for remote node
+* [x] Tor hidden service for remote node  
 * [ ] Light wallet server
 
 ## Support
