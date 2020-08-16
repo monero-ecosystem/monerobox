@@ -36,8 +36,6 @@ do
   # get new yml and config files
   git pull
   cp settings/*.yml /settings/
-  cp settings/monerod.conf.* /settings/
-  cp settings/*.conf /settings/
 
   # pull docker images
   /usr/local/bin/docker-compose -f /settings/tor.yml pull

@@ -7,7 +7,7 @@ if [ "$tor" = "true" ]; then
   echo "monerod will use tor."
 
   sleep 10;
-  tor_ip=$(getent hosts tor | awk '{ print $1 }'
+  tor_ip=$(getent hosts tor | awk '{ print $1 }')
 
   if [ -z "$tor_ip" ]; then
     echo "ERROR: Unable to find IP of tor service!";

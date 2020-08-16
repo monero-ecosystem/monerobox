@@ -29,25 +29,13 @@ RUN mkdir -p /usr/src/app/source/log
 
 
 # specify the base image for web
-FROM arm64v8/ubuntu:18.04
-
-COPY qemu-aarch64-static /usr/bin
-
-# install tools
-RUN apt-get update \
-  && apt-get install -y perl librrds-perl libhttp-daemon-perl libjson-perl libipc-sharelite-perl libfile-which-perl libsnmp-extension-passpersist-perl systemd jq curl libltdl7 python-pip libffi-dev
+FROM moneroboxdev/docker-compose:1.24.0
 
 # Create app directory
 WORKDIR /usr/src/app
 
-# install docker-compose
-RUN pip install docker-compose
-
 # Copy files from builder
 COPY --from=builder /usr/src/app/source .
-
-# Expose port
-EXPOSE 80
 
 ENTRYPOINT ["/usr/src/app/rpimonitord", "-c", "/usr/src/app/etc/rpimonitor/daemon.conf",  "-c", "/usr/src/app/etc/rpimonitor/template/monerobox.conf"]
 
