@@ -1,41 +1,29 @@
-# specify the base image for builder
-FROM arm64v8/ubuntu:18.04 as builder
-
-COPY qemu-aarch64-static /usr/bin
+# specify the base image for web
+FROM docker-compose:latest
 
 # install tools
 RUN apt-get update \
-  && apt-get install -y git curl jq
+  && apt-get install -y git curl jq libipc-sharelite-perl libwww-perl libjson-perl librrds-perl libfile-which-perl
 
 # Create app directory
 WORKDIR /usr/src/app
 
 # checkout git source 
 RUN git clone https://github.com/Jasonhcwong/RPi-Monitor-Monerobox.git
-RUN mkdir source && cd RPi-Monitor-Monerobox && git checkout container
+RUN cd RPi-Monitor-Monerobox && git checkout pi4
 
 # Copy executable file
-RUN mv /usr/src/app/RPi-Monitor-Monerobox/src/usr/bin/* /usr/src/app/source/
+RUN mv /usr/src/app/RPi-Monitor-Monerobox/src/usr/bin/* /usr/src/app/
 
 # Copy web files
-RUN mv /usr/src/app/RPi-Monitor-Monerobox/src/usr/share/rpimonitor/web /usr/src/app/source/
+RUN mv /usr/src/app/RPi-Monitor-Monerobox/src/usr/share/rpimonitor/web /usr/src/app/
 
 # Copy config files
-RUN mv /usr/src/app/RPi-Monitor-Monerobox/src/etc /usr/src/app/source/
+RUN mv /usr/src/app/RPi-Monitor-Monerobox/src/etc /usr/src/app/
 
 # Create folder for datastore and log
-RUN mkdir -p /usr/src/app/source/data
-RUN mkdir -p /usr/src/app/source/log
-
-
-# specify the base image for web
-FROM moneroboxdev/docker-compose:1.24.0
-
-# Create app directory
-WORKDIR /usr/src/app
-
-# Copy files from builder
-COPY --from=builder /usr/src/app/source .
+RUN mkdir -p /usr/src/app/data
+RUN mkdir -p /usr/src/app/log
 
 ENTRYPOINT ["/usr/src/app/rpimonitord", "-c", "/usr/src/app/etc/rpimonitor/daemon.conf",  "-c", "/usr/src/app/etc/rpimonitor/template/monerobox.conf"]
 

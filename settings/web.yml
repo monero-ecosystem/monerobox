@@ -5,14 +5,14 @@ services:
     container_name: web
     hostname: web
     restart: always
-    image: monerobox/web:latest
+    image: monerobox/pi4_web:latest
     mem_limit: 128m
     memswap_limit: -1
     cpus: 1
     cpuset: "0"
     oom_kill_disable: true
     volumes:
-      - /sys/class/net/eth0:/usr/src/app/host_dev/net/eth0
+      - /sys/class/net/wlan0:/usr/src/app/host_dev/net/wlan0
       - /run/systemd:/run/systemd
       - /run/docker.sock:/run/docker.sock
       - /usr//bin/docker:/usr/bin/docker

@@ -1,24 +1,9 @@
-# specify the base image for builder
-FROM arm64v8/ubuntu:18.04 as builder
-
-# install tools and deps for compilation
-RUN apt-get update \
-  && apt-get install -y wget
-
-# Create src directory
-WORKDIR /usr/src
-
-# Download and uncompress monero CLI tools
-RUN wget -q https://downloads.getmonero.org/cli/linuxarm8 -O - | tar -zx
-RUN mv monero-*/* .
-
-
 # specify the base image for monerod
-FROM arm64v8/ubuntu:18.04
+FROM ubuntu:18.04
 
 # install tools
 RUN apt-get update \
-  && apt-get install -y jq torsocks 
+  && apt-get install -y jq torsocks wget
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -26,8 +11,9 @@ WORKDIR /usr/src/app
 # Copy entrypoint file
 COPY monerod_entrypoint.sh ./
 
-# Copy binaries from builder
-COPY --from=builder /usr/src/monerod ./
+# Download and uncompress monero CLI tools
+RUN wget -q https://downloads.getmonero.org/cli/linuxarm7 -O - | tar -jx
+RUN mv monero-*/* .
 
 # Expose p2p port and RPC port
 EXPOSE 18080 18081

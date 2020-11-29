@@ -1,5 +1,5 @@
 # specify the base image
-FROM moneroboxdev/docker-compose:1.24.0
+FROM moneroboxdev/pi4_docker-compose:latest
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 # clone the repo
 RUN git clone https://github.com/monero-ecosystem/monerobox.git \
   && cd monerobox \
-  && git checkout container
+  && git checkout pi4
 
 COPY manager_entrypoint.sh .
 

@@ -5,7 +5,7 @@ services:
     container_name: manager
     hostname: manager
     restart: always
-    image: monerobox/manager:latest
+    image: monerobox/pi4_manager:latest
     mem_limit: 128m
     memswap_limit: -1
     cpus: 1

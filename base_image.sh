@@ -25,29 +25,22 @@ apt install -y \
     gnupg-agent \
     software-properties-common
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+curl -fsSL https://get.docker.com -o get-docker.sh
 
-apt-key fingerprint 0EBFCD88
-
-add-apt-repository \
-   "deb [arch=arm64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-
-apt update
-
-apt install -y docker-ce=5:18.09.5~3-0~ubuntu-bionic docker-ce-cli containerd.io
+sudo sh get-docker.sh
 
 # install docker-compose
-apt install -y python-pip python-setuptools python-dev libltdl7 libffi-dev
-pip install docker-compose==1.24.0
+sudo apt-get install -y libffi-dev libssl-dev
+sudo apt-get install -y python3 python3-pip
+sudo apt-get remove python-configparser
 
+sudo pip3 -v install docker-compose
 
-# add user rock64 to docker group
-usermod -aG docker rock64
+# add user pi to docker group
+usermod -aG docker pi
 
 # reboot
-echo "System will reboot it 10 seconds."
-sleep 10
-reboot
+#echo "System will reboot it 10 seconds."
+#sleep 10
+#reboot
 

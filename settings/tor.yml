@@ -5,7 +5,7 @@ services:
     container_name: tor
     hostname: tor
     restart: always
-    image: monerobox/tor:latest
+    image: monerobox/pi4_tor:latest
     mem_limit: 128m
     memswap_limit: -1
     cpus: 1
