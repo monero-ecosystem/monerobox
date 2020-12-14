@@ -9,6 +9,7 @@ log-level=*:WARNING,net:FATAL,net.http:FATAL,net.p2p:FATAL,net.cn:FATAL,global:I
 
 rpc-bind-ip=0.0.0.0
 rpc-login=monero:monerobox
+rpc-restricted-bind-ip=0.0.0.0
 rpc-restricted-bind-port=18083
 confirm-external-bind=1
 

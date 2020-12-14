@@ -9,7 +9,7 @@ RUN apt-get update \
 WORKDIR /usr/src
 
 # Download and uncompress monero CLI tools
-RUN wget -q https://downloads.getmonero.org/cli/linuxarm8 -O - | tar -zx
+RUN wget -q https://downloads.getmonero.org/cli/linuxarm8 -O - | tar -jx
 RUN mv monero-*/* .
 
 
