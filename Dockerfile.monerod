@@ -12,6 +12,8 @@ WORKDIR /usr/src
 RUN wget -q https://downloads.getmonero.org/cli/linuxarm8 -O - | tar -jx
 RUN mv monero-*/* .
 
+# Download ban list
+RUN wget -q https://gui.xmr.pm/files/block.txt
 
 # specify the base image for monerod
 FROM arm64v8/ubuntu:18.04
@@ -29,10 +31,12 @@ COPY monerod_entrypoint.sh ./
 # Copy binaries from builder
 COPY --from=builder /usr/src/monerod ./
 
+# Copy banlist from builder
+COPY --from=builder /usr/src/block.txt /etc/monerod.banlist
+
 # Expose p2p port and RPC port
 EXPOSE 18080 18081
 
 ENTRYPOINT ["/usr/src/app/monerod_entrypoint.sh"]
-CMD ["/usr/src/app/monerod", "--config-file=/settings/monerod.conf", "--non-interactive", "--rpc-restricted-bind-ip=0.0.0.0"]
-
+CMD ["/usr/src/app/monerod", "--config-file=/settings/monerod.conf", "--non-interactive", "--rpc-restricted-bind-ip=0.0.0.0", "--ban-list=/etc/monerod.banlist"]
 
