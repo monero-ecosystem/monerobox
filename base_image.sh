@@ -32,7 +32,7 @@ sudo sh get-docker.sh
 # install docker-compose
 sudo apt-get install -y libffi-dev libssl-dev
 sudo apt-get install -y python3 python3-pip
-sudo apt-get remove python-configparser
+sudo apt-get remove -y python-configparser
 
 sudo pip3 -v install docker-compose
 
@@ -40,7 +40,7 @@ sudo pip3 -v install docker-compose
 usermod -aG docker pi
 
 # reboot
-#echo "System will reboot it 10 seconds."
-#sleep 10
-#reboot
+echo "System will reboot it 10 seconds."
+sleep 10
+reboot
 
