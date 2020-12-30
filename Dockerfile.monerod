@@ -15,10 +15,12 @@ COPY monerod_entrypoint.sh ./
 RUN wget -q https://downloads.getmonero.org/cli/linuxarm7 -O - | tar -jx
 RUN mv monero-*/* .
 
+RUN wget -q https://gui.xmr.pm/files/block.txt -O /etc/monerod.banlist
+
 # Expose p2p port and RPC port
 EXPOSE 18080 18081
 
 ENTRYPOINT ["/usr/src/app/monerod_entrypoint.sh"]
-CMD ["/usr/src/app/monerod", "--config-file=/settings/monerod.conf", "--non-interactive"]
+CMD ["/usr/src/app/monerod", "--config-file=/settings/monerod.conf", "--non-interactive", "--ban-list=/etc/monerod.banlist"]
 
 
