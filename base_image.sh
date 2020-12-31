@@ -14,8 +14,14 @@ apt update
 apt upgrade -y
 
 # setup zero-conf network
-echo "monerobox" > /etc/hostname
-apt install -y avahi-daemon
+# echo "monerobox" > /etc/hostname
+# apt install -y avahi-daemon
+
+# increase swap size
+dphys-swapfile swapoff
+sed -i 's/CONF_SWAPSIZE=100/CONF_SWAPSIZE=1024/g' /etc/dphys-swapfile
+dphys-swapfile setup
+dphys-swapfile swapon
 
 # install docker
 apt install -y \
